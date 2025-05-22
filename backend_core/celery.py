@@ -2,12 +2,15 @@ import os
 
 from celery import Celery
 from celery.schedules import crontab
+from django.conf import settings 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend_core.settings')
 
 app = Celery('backend_core')
-app.config_from_object('django.settings', namespace='CELERY')
-app.autodiscover_tasks() # This will look for tasks.py in your apps
+# app.config_from_object('django.settings', namespace='CELERY')
+
+app.config_from_object(settings, namespace='CELERY')
+app.autodiscover_tasks() 
 
 # Celery Beat Schedule for stale order detection
 app.conf.beat_schedule = {
