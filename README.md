@@ -70,11 +70,12 @@ It demonstrates handling concurrency, asynchronous workflows, lifecycle tracking
 
 2.  **Clone the repository (or create files as described):**
     ```bash
-    git clone <your-repo-url>
-    cd order_fulfillment_system
+    git clone https://github.com/MohiuddinSumon/stockflow
+    cd stockflow
+    uv sync
     ```
 
-3.  **Ensure you have a `pyproject.toml` file** in the project root defining your dependencies. Example structure:
+3.  **Ensure you have a `pyproject.toml` file** in the project root defining your dependencies. Example structure (it will come if you pull):
     ```toml
     [project]
     name = "order_fulfillment_system"
@@ -94,7 +95,7 @@ It demonstrates handling concurrency, asynchronous workflows, lifecycle tracking
     build-backend = "hatchling.build"
     ```
 
-4.  **Create a virtual environment using `uv`:**
+4.  **Create a virtual environment using `uv`: (uv sync should do the job)**
     ```bash
     uv venv .venv  # Creates a virtual environment named .venv
     ```
